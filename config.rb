@@ -140,7 +140,15 @@ end
 
 activate :deploy do |deploy|
   deploy.method = :git
+
+  # Uncomment following 3 lines to deploy to GH pages on master commits
+  #
+  # if ENV['TRAVIS']
+  #   deploy.remote   = "https://#{ENV['GH_TOKEN']}:@github.com/#{ENV['TRAVIS_REPO_SLUG']}.git"
+  # end
+
   # Optional Settings
+  # deploy.build_before = true # always run 'build' before a deploy
   # deploy.remote   = 'custom-remote' # remote name or git url, default: origin
   # deploy.branch   = 'custom-branch' # default: gh-pages
   # deploy.strategy = :submodule      # commit strategy: can be :force_push or :submodule, default: :force_push

@@ -54,6 +54,13 @@ Static site starter template for [Middleman](http://middlemanapp.com).
 
 `$ middleman deploy`
 
+There is an option to add a [Travis CI](https://travis-ci.org/) job to automatically deploy on commits to master. 
+
+- Uncomment travis settings in `Deploy config` section of `config.rb`
+- Rename `sample.travis.yml` to `.travis.yml`
+- Add your GitHub API token as a [secure environment variable](http://docs.travis-ci.com/user/environment-variables/#Secure-Variables) as `GH_TOKEN` to the `travis.yml` file
+- Set up travis hooks
+
 
 ### Template helpers
 

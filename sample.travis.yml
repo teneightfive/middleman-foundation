@@ -1,0 +1,19 @@
+language:
+  - ruby
+rvm:
+  - 2.1.0
+node_js:
+  - 0.10
+before_install:
+  - npm install -g bower
+install:
+  - bundle install --jobs=3 --retry=3 --deployment
+  - bower install
+before_script:
+  - bundle exec middleman build
+script:
+  - echo 0
+after_success:
+  - git config --global user.email ""
+  - git config --global user.name ""
+  - test $TRAVIS_PULL_REQUEST == 'false' && test $TRAVIS_BRANCH == 'master' && bundle exec middleman deploy
