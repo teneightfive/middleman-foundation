@@ -25,14 +25,14 @@ Static site starter template for [Middleman](http://middlemanapp.com).
 
   ```
   $ cd ~/.middleman
-  $ git clone git@github.com:ministryofjustice/middleman-moj-foundation.git slimmer
+  $ git clone git@github.com:teneightfive/middleman-foundation.git middleman-foundation
   ```
 
 3. Start your project
 
   ```
   $ cd ~/path/to/your/project
-  $ middleman init PROJECT_NAME --template=middleman-moj-foundation
+  $ middleman init PROJECT_NAME --template=middleman-foundation
   ```
 
 ## Using Bower
