@@ -18,21 +18,20 @@ Static site starter template for [Middleman](http://middlemanapp.com).
 1. Install Middleman
 
   ```
-  $ gem install middleman
+  gem install middleman
   ```
 
 2. Install template
 
   ```
-  $ cd ~/.middleman
-  $ git clone git@github.com:teneightfive/middleman-foundation.git middleman-foundation
+  (export D=~/.middleman/middleman-foundation; mkdir -p ${D}; curl -L https://github.com/teneightfive/middleman-foundation/tarball/master | tar --strip-components=1 -C ${D} -xf-)
   ```
 
 3. Start your project
 
   ```
-  $ cd ~/path/to/your/project
-  $ middleman init PROJECT_NAME --template=middleman-foundation
+  cd ~/path/to/your/project
+  middleman init PROJECT_NAME --template=middleman-foundation
   ```
 
 ## Using Bower
