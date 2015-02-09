@@ -27,11 +27,17 @@ Static site starter template for [Middleman](http://middlemanapp.com).
   (export D=~/.middleman/middleman-foundation; mkdir -p ${D}; curl -L https://github.com/teneightfive/middleman-foundation/tarball/master | tar --strip-components=1 -C ${D} -xf-)
   ```
 
-3. Start your project
+3. Create your project
 
   ```
   cd ~/path/to/your/project
   middleman init PROJECT_NAME --template=middleman-foundation
+  ```
+
+4. Run your project
+
+  ```
+  middleman start
   ```
 
 ## Using Bower
@@ -53,17 +59,17 @@ Static site starter template for [Middleman](http://middlemanapp.com).
 
 `$ middleman deploy`
 
-There is an option to add a [Travis CI](https://travis-ci.org/) job to automatically deploy on commits to master. 
+There is an option to add a Travis CI job to automatically deploy on commits to master.
 
+- Create a web hook by switching on your repo from the [Travis repository list](https://travis-ci.org/profile)
 - Uncomment travis settings in `Deploy config` section of `config.rb`
 - Rename `sample.travis.yml` to `.travis.yml`
-- Add your GitHub API token as a [secure environment variable](http://docs.travis-ci.com/user/environment-variables/#Secure-Variables) as `GH_TOKEN` to the `travis.yml` file
-- Set up travis hooks
+- Add your GitHub API token as a [secure environment variable](http://docs.travis-ci.com/user/environment-variables/#Secure-Variables) as `GH_TOKEN` to the `.travis.yml` file
 
 
-### Template helpers
+## Template helpers
 
-#### `resources_for`
+### `resources_for`
 List resources for a specific path.
 
 Parameters:
@@ -71,13 +77,13 @@ Parameters:
   - `ext` - optional. Resource extension (defaults to `html`)
   - `exclude_indexes` - optional. Whether to exclude directory indexes from the list of resources (defaults to `false`)
 
-#### `local_data`
+### `local_data`
 Load local data from YAML or JSON file. e.g. `= local_data '../data.yaml'
 
 Parameters:
   - `path` - required. Relative path to YAML file, including file extension.
 
-#### `get`
+### `get`
 Make an HTTP GET request using [Rest Client](https://github.com/rest-client/rest-client).
 
 Parameters:
@@ -85,7 +91,7 @@ Parameters:
   - `options` - optional. Headers or parameters.  
      e.g. `= get 'https://user:password@api.example.com/resource', { params: { filter: 'desc' }, accept: 'application/json' }`
 
-#### `post`
+### `post`
 Make an HTTP POST request using [Rest Client](https://github.com/rest-client/rest-client).
 
 Parameters:
@@ -95,7 +101,7 @@ Parameters:
   - `headers` - optional. Custom headers  
      e.g. `= post 'https://user:password@api.example.com/resource', '{}' { accept: 'application/json' }`
 
-### Frontmatter
+## Frontmatter
 
 There are two special parameters set in [Middleman’s Frontmatter](http://middlemanapp.com/basics/frontmatter/):
 `javascripts` and `stylesheets`. When set, JavaScript and stylesheets are inserted in that particular page.
